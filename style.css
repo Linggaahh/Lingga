@@ -1,0 +1,845 @@
+/* Basic Setup */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   text-decoration: none;
+   font-family: 'Poppins', sans-serif;
+}
+
+body {
+   background: #1f242d;
+   color: #fff;
+   overflow-x: hidden;
+   font-size: 50px;
+   line-height: 1.5;
+}
+
+html {
+   font-size: 100%;
+}
+
+section {
+   min-height: 100vh;
+   padding: 5rem 9%;
+   animation: fadeInSection 1s ease-out;
+}
+
+/* Header */
+.header {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   padding: 2.5rem 9%;
+   background: #033186;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   z-index: 100;
+   box-shadow: 0 5px 20px rgb(0, 0, 0);
+   transition: all 0.3s ease;
+}
+
+.navbar a {
+   font-size: 1.9rem;
+   color: #fff;
+   margin-left: 3rem;
+   transition: .3s;
+}
+
+.navbar a:hover, .navbar a.active {
+   color: rgb(0, 255, 76);
+   transform: scale(1.1);
+}
+
+#menu-icon {
+   font-size: 3.8rem;
+   color: #fff;
+   display: none;
+}
+
+/* Home Section */
+.home {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 6rem 10%;
+   background: linear-gradient(135deg, #1f242d, #121417);
+   color: #ffffff;
+   animation: fadeIn 1.5s ease-out;
+   flex-wrap: wrap; /* Ensures responsiveness for smaller screens */
+}
+
+/* Home Content */
+.home-content {
+   text-align: center;
+   margin-right: 3rem;
+   animation: slideInText 1.2s ease-out;
+}
+
+.home-content h3 {
+   font-size: 2.4rem;
+   color: rgb(0, 26, 255);
+   margin-bottom: 1rem;
+}
+
+.home-content h1 {
+   font-size: 4rem;
+   font-weight: bold;
+   margin-bottom: 1rem;
+   color: #fff;
+}
+
+.home-content h3 span {
+   color: rgb(0, 26, 255);
+   font-weight: bold;
+}
+
+.social-media {
+   margin-top: 2rem;
+}
+
+.social-media a {
+   display: inline-flex;
+   justify-content: center;
+   align-items: center;
+   width: 6rem;
+   height: 6rem;
+   background: transparent;
+   border: 0.3rem solidrgb(0, 26, 255);
+   border-radius: 50%;
+   font-size: 2.8rem;
+   color:rgb(0, 26, 255);
+   margin: 1.5rem;
+   transition: all 0.3s ease;
+   transform: scale(1);
+}
+
+.social-media a:hover {
+   background:rgb(0, 26, 255);
+   color: #1f242d;
+   transform: scale(1.2);
+   box-shadow: 0 0 20pxrgb(0, 26, 255);
+}
+
+/* Profile Image */
+.home-img {
+   position: relative;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 3rem;
+}
+
+.home-img img {
+   width: 750px; /* Size of the circular profile picture */
+   height: 750px;
+   border-radius: 50%; /* Makes the image circular */
+   border: 0.5rem solidrgb(0, 26, 255);
+   box-shadow: 0 10px 30px rgba(4, 0, 255, 0.5);
+   animation: floatImage 4s ease-in-out infinite;
+   object-fit: cover; /* Ensures the image is properly scaled */
+}
+
+/* Animations */
+@keyframes fadeIn {
+   from {
+       opacity: 0;
+   }
+   to {
+       opacity: 1;
+   }
+}
+
+@keyframes slideInText {
+   from {
+       transform: translateY(-50px);
+       opacity: 0;
+   }
+   to {
+       transform: translateY(0);
+       opacity: 1;
+   }
+}
+
+@keyframes floatImage {
+   0% {
+       transform: translateY(0);
+   }
+   50% {
+       transform: translateY(-15px);
+   }
+   100% {
+       transform: translateY(0);
+   }
+}
+
+/* Container for Project Section */
+.projects-container {
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Responsive grid with larger cards */
+   gap: 400px; /* Adjusted the gap between cards */
+   padding: 10rem 9%;
+   animation: fadeInSection 1s ease-out;
+   align-items: center;
+   margin-left: 10px;
+}
+
+/* Individual Project Card */
+.project-card {
+   background-color: #f8f9fa;
+   border-radius: 15px; /* More rounded corners */
+   padding: 30px; /* Increased padding for better content spacing */
+   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Larger shadow for depth */
+   transition: all 0.3s ease;
+   text-align: center;
+}
+
+/* Hover Effect for Cards */
+.project-card:hover {
+   transform: translateY(-15px); /* Slightly bigger hover effect */
+   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); /* More pronounced shadow on hover */
+}
+
+/* Project Image */
+.project-card img {
+   width: 100%;
+   height: auto;
+   border-radius: 5px; /* Rounded corners for images */
+   transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Hover Effect for Images */
+.project-card:hover img {
+   transform: scale(1.1);
+   opacity: 0.9; /* Subtle opacity change on hover */
+}
+
+/* Project Title */
+.project-card h4 {
+   font-size: 2rem; /* Larger title font size */
+   color: #333;
+   margin-top: 20px;
+   transition: color 0.3s ease;
+}
+
+/* Project Description */
+.project-card p {
+   font-size: 1.6rem; /* Slightly larger description text */
+   color: #555;
+   margin-top: 12px;
+}
+
+/* Hover Effect for Project Title */
+.project-card:hover h4 {
+   color: #007bff; /* Change title color on hover */
+}
+
+
+/* Skill Bars Animation */
+.skill-bar {
+   position: relative;
+   height: 30px;
+   margin: 1.5rem 0;
+   background: #444;
+   border-radius: 10px;
+   overflow: hidden;
+}
+
+.skill-bar span {
+   display: block;
+   height: 100%;
+   width: 0;
+   background: rgb(0, 89, 255);
+   border-radius: 10px;
+   animation: fillSkillBar 2s forwards;
+}
+
+@keyframes fillSkillBar {
+   from {
+       width: 0;
+   }
+   to {
+       width: 90%;
+   }
+}
+
+/* Footer */
+.footer {
+   text-align: center;
+   padding: 3rem 1.5rem;
+   background: #323946;
+   color: #fff;
+   font-size: 3.6rem;
+}
+
+.testimonials {
+   background: linear-gradient(135deg, #1f242d, #121417);
+   padding: 6rem 12%;
+   text-align: center;
+   color: #fff;
+   animation: fadeIn 1.5s ease-out;
+   position: relative;
+}
+
+.testimonials::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background: rgba(0, 0, 0, 0.3);
+   z-index: -1;
+}
+
+.testimonials h2 {
+   font-size: 6rem;
+   margin-bottom: 4rem;
+   color: rgb(255, 255, 255);
+   text-transform: uppercase;
+   letter-spacing: 3px;
+   text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.4);
+}
+
+.testimonials-container {
+   display: flex;
+   justify-content: center;
+   gap: 20rem;
+   flex-wrap: wrap;
+   animation: slideUp 1s ease-out;
+   
+}
+
+.testimonial-card {
+   background: #3a424d;
+   border-radius: 55px;
+   padding: 5rem;
+   box-shadow: 0 10px 25px rgba(255, 255, 255, 0.589);
+   text-align: center;
+   width: 550px;
+   height: 850px;
+   transition: all 0.3s ease;
+   position: relative;
+}
+
+.testimonial-card:hover {
+   transform: scale(1.1);
+   box-shadow: 0 12px 30px rgba(255, 255, 255, 0.589);
+}
+
+.testimonial-card::after {
+   content: "";
+   position: absolute;
+   top: 50px;
+   left: 50px;
+   width: 90%;
+   height: 90%;
+   background: rgba(255, 255, 255, 0.589);
+   border-radius: 20px;
+   z-index: -1;
+}
+
+.testimonial-image {
+   width: 320px;
+   height: 320px;
+   border-radius: 50%;
+   margin-bottom: 2rem;
+   border: 5px solid rgb(255, 255, 255);
+   transition: all 0.3s ease;
+}
+
+.testimonial-image:hover {
+   transform: rotate(15deg);
+}
+
+.testimonial-text {
+   font-size: 5rem;
+   margin-bottom: 2rem;
+   color: #fff; /* Ensure this is white */
+   line-height: 1.6;
+   font-weight: 400;
+   position: relative;
+   z-index: 1;
+}
+
+.testimonial-author {
+   font-size: 2.8rem;
+   color: rgb(255, 255, 255);
+   font-style: italic;
+   text-transform: capitalize;
+   position: relative;
+   z-index: 1;
+}
+
+
+/* Animation for sliding in testimonials */
+@keyframes slideUp {
+   0% {
+      opacity: 0;
+      transform: translateY(50px);
+   }
+   100% {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+
+
+/* Contact Section */
+.contact {
+   background: linear-gradient(135deg, #2a303a, #1f242d);
+   padding: 6rem 10%;
+   text-align: center;
+   color: #fff;
+   position: relative;
+   overflow: hidden;
+}
+
+.contact::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: -50%;
+   width: 150%;
+   height: 150%;
+   background: radial-gradient(circle, rgba(14, 239, 255, 0.2), transparent);
+   transform: rotate(45deg);
+   z-index: -1;
+}
+
+.contact h2 {
+   font-size: 4rem;
+   margin-bottom: 2rem;
+   color: rgb(255, 255, 255);
+   text-shadow: 2px 2px 10px rgba(14, 239, 255, 0.4);
+}
+
+.contact .subheading {
+   font-size: 1.8rem;
+   margin-bottom: 3rem;
+   color: #ddd;
+}
+
+.contact-container {
+   display: flex;
+   justify-content: center;
+   gap: 3rem;
+   flex-wrap: wrap;
+   align-items: flex-start;
+}
+
+.contact-info {
+   flex: 1;
+   min-width: 300px;
+   font-size: 1.6rem;
+   line-height: 2.5;
+   text-align: left;
+   color: #ddd;
+}
+
+.contact-info p a {
+   color: rgb(255, 255, 255);
+   text-decoration: none;
+   transition: color 0.3s ease;
+}
+
+.contact-info p a:hover {
+   color: #fff;
+}
+
+.contact-form {
+   flex: 1;
+   min-width: 300px;
+}
+
+.contact-form form {
+   display: flex;
+   flex-direction: column;
+   gap: 1.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+   width: 100%;
+   padding: 1rem;
+   font-size: 2.6rem;
+   border: 1px solid #555;
+   border-radius: 5px;
+   background: #2a303a;
+   color: #fff;
+   transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+   border-color: rgb(0, 89, 255);
+   box-shadow: 0 0 8px rgba(14, 239, 255, 0.6);
+   outline: none;
+}
+
+.contact-form button {
+   padding: 1rem 2rem;
+   font-size: 1.8rem;
+   color: #fff;
+   background: rgb(0, 89, 255);
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form button:hover {
+   background: #0cc;
+   transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+   .contact-container {
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .contact-info {
+      text-align: center;
+   }
+}
+
+
+/* Pricing Section */
+.pricing-section {
+   display: flex;
+   justify-content: space-between;
+   padding: 5rem 9%;
+   text-align: center;
+}
+
+.pricing-box {
+   width: 30%;
+   background: #3a424d;
+   border-radius: 12px;
+   padding: 2.5rem;
+   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+   transition: all 0.3s ease;
+}
+
+.pricing-box:hover {
+   transform: scale(1.05);
+   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.pricing-box h3 {
+   font-size: 2rem;
+   color: #fff;
+   margin-bottom: 2rem;
+}
+
+.pricing-box p {
+   font-size: 1.5rem;
+   color: #fff;
+}
+
+.pricing-box .price {
+   font-size: 2.5rem;
+   color: rgb(0, 89, 255);
+   margin-top: 2rem;
+}
+
+.pricing-button {
+   background: rgb(0, 89, 255);
+   color: #1f242d;
+   padding: 1rem 2rem;
+   border-radius: 8px;
+   text-transform: uppercase;
+   font-size: 1.6rem;
+   margin-top: 2rem;
+   cursor: pointer;
+   transition: all 0.3s ease;
+}
+
+.pricing-button:hover {
+   background: #007bff;
+   color: #fff;
+}
+
+/* Blog Section */
+.blog-section {
+   background: #323946;
+   padding: 5rem 9%;
+}
+
+.blog-section h2 {
+   font-size: 3rem;
+   color: #fff;
+   margin-bottom: 3rem;
+   text-align: center;
+   animation: fadeIn 1.5s ease-out;
+}
+
+.blog-post {
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 3rem;
+   background: #3a424d;
+   border-radius: 12px;
+   padding: 2rem;
+   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+   transition: all 0.3s ease;
+}
+
+.blog-post:hover {
+   transform: scale(1.05);
+   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.blog-post img {
+   width: 30%;
+   border-radius: 8px;
+   margin-right: 2rem;
+}
+
+.blog-content {
+   width: 65%;
+}
+
+.blog-content h3 {
+   font-size: 2rem;
+   color: #fff;
+   margin-bottom: 1rem;
+}
+
+.blog-content p {
+   font-size: 1.5rem;
+   color: #bbb;
+}
+
+.blog-content a {
+   font-size: 1.5rem;
+   color: rgb(0, 89, 255);
+   text-decoration: underline;
+   transition: all 0.3s ease;
+}
+
+.blog-content a:hover {
+   color: #fff;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+   .navbar {
+       display: none;
+       position: absolute;
+       top: 10%;
+       right: 5%;
+       background-color: #1f242d;
+       padding: 3rem;
+       border-radius: 1rem;
+   }
+
+   #menu-icon {
+       display: block;
+   }
+
+   .navbar.active {
+       display: flex;
+       flex-direction: column;
+   }
+
+   .navbar a {
+       font-size: 2.5rem;
+       margin: 1rem 0;
+   }
+
+   section h2, section h3 {
+       font-size: 55px;
+   }
+
+   section p {
+       font-size: 100px;
+   }
+
+   .pricing-section {
+       flex-direction: column;
+       padding: 5rem 2%;
+   }
+
+   .pricing-box {
+       width: 100%;
+       margin-bottom: 2rem;
+   }
+
+   .blog-post {
+       flex-direction: column;
+   }
+
+   .blog-post img {
+       width: 100%;
+       margin-bottom: 2rem;
+   }
+
+   .blog-content {
+       width: 100%;
+   }
+}
+/* Card Styling */
+.testimonials-container, .about-me-container, .passion-container {
+   display: flex;
+   gap: 2rem;
+   justify-content: center;
+   flex-wrap: wrap;
+}
+
+.testimonial-card, .about-me-card, .passion-card {
+   background: #3a424d;
+   border-radius: 12px;
+   padding: 3rem; /* Increased padding for larger cards */
+   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3); /* Increased shadow size */
+   width: 350px; /* Increased width for larger cards */
+   text-align: center;
+   transition: all 0.3s ease;
+}
+
+.testimonial-card:hover, .about-me-card:hover, .passion-card:hover {
+   transform: scale(1.05);
+   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Larger shadow on hover */
+}
+
+.testimonial-card p, .about-me-card p, .passion-card p {
+   font-size: 1.8rem; /* Increased font size for readability */
+   color: #0400ff;
+   margin-top: 1rem;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+   .testimonials-container, .about-me-container, .passion-container {
+       flex-direction: column;
+       align-items: center;
+   }
+
+   .testimonial-card, .about-me-card, .passion-card {
+       width: 200%;
+       max-width: 400px; /* Set a maximum width for smaller screens */
+       margin-bottom: 2rem;
+   }
+}
+
+.passion-container {
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* Larger cards */
+   gap: 50rem; /* Increased gap between cards */
+   padding: 6rem 9%;
+   animation: fadeInSection 1s ease-out;
+}
+
+/* Passion Card */
+.passion-card {
+   position: relative;
+   background-color: #fff;
+   border-radius: 20px; /* More rounded corners */
+   overflow: hidden;
+   box-shadow: 0 12px 30px rgba(0, 4, 255, 0.2); /* Stronger shadow for depth */
+   transition: all 0.3s ease;
+   width: 150%;
+}
+
+/* Background Image */
+.passion-image {
+   height: 300px; /* Larger image height */
+   width: 60%;
+   background-size: cover;
+   background-position: center;
+   border-radius: 20px 20px 0 0;
+}
+
+/* Card Content */
+.card-content {
+   padding: 30px; /* More padding for larger content */
+   text-align: center;
+}
+
+.passion-card h3 {
+   font-size: 3.5rem; /* Larger title font size */
+   color: #333;
+   margin: 20px 0;
+}
+
+.passion-card p {
+   font-size: 2.8rem; /* Larger description text */
+   color: #666;
+}
+
+/* Hover Effect for Passion Cards */
+.passion-card:hover {
+   transform: translateY(-15px); /* Slight lift on hover */
+   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3); /* Larger shadow on hover */
+}
+
+.passion-card:hover .passion-image {
+   opacity: 0.85; /* Subtle opacity change on hover */
+}
+
+.passion-card:hover h3 {
+   color: #007bff; /* Change title color on hover */
+}
+
+.passion-card:hover p {
+   color: #333; /* Darken description text on hover */
+}
+/* About Me Section */
+.about-me {
+   padding: 5rem 10%;
+   background: linear-gradient(135deg, #1f242d, #121417);
+   color: #ffffff;
+   animation: fadeInSection 1.5s ease-out;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh; /* Ensures the section takes full viewport height */
+}
+
+.about-me-content {
+   max-width: 1000px;
+   margin: 0 auto;
+   text-align:center ;
+   animation: slideUp 1.2s ease-out;
+}
+
+.about-me .heading {
+   font-size: 5rem;
+   font-weight: bold;
+   margin-bottom: 4rem;
+   color: rgb(255, 255, 255);
+}
+
+.about-me p {
+   font-size: 2rem;
+   line-height: 2;
+   color: #ddd;
+   margin-bottom: 0;
+}
+
+/* Animations */
+@keyframes fadeInSection {
+   from {
+       opacity: 0;
+       transform: translateY(50px);
+   }
+   to {
+       opacity: 1;
+       transform: translateY(0);
+   }
+}
+
+@keyframes slideUp {
+   from {
+       opacity: 0;
+       transform: translateY(30px);
+   }
+   to {
+       opacity: 1;
+       transform: translateY(0);
+   }
+}
