@@ -5,6 +5,9 @@
    box-sizing: border-box;
    text-decoration: none;
    font-family: 'Poppins', sans-serif;
+   justify-items: center;
+   justify-content: center;
+   align-items: center;
 }
 
 body {
@@ -20,6 +23,9 @@ body {
 
 html {
    font-size: 100%;
+   justify-items: center;
+   justify-content: center;
+   align-items: center;
 }
 
 section {
@@ -42,6 +48,13 @@ section {
    z-index: 100;
    box-shadow: 0 5px 20px rgb(0, 0, 0);
    transition: all 0.3s ease;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+.navbar{
+   display: flex;
+   gap: 1rem;
 }
 
 .navbar a {
@@ -49,6 +62,10 @@ section {
    color: #fff;
    margin-left: 3rem;
    transition: .3s;
+   justify-items: center;
+   justify-content: center;
+   align-items: center;
+  
 }
 
 .navbar a:hover, .navbar a.active {
@@ -65,6 +82,7 @@ section {
 /* Home Section */
 .home {
    display: flex;
+   justify-items: center;
    justify-content: center;
    align-items: center;
    padding: 6rem 10%;
@@ -77,6 +95,9 @@ section {
 /* Home Content */
 .home-content {
    text-align: center;
+   justify-items: center;
+   justify-content: center;
+   align-items: center;
    margin-right: 3rem;
    animation: slideInText 1.2s ease-out;
 }
@@ -85,6 +106,9 @@ section {
    font-size: 2.4rem;
    color: rgb(0, 26, 255);
    margin-bottom: 1rem;
+   justify-items: center;
+   justify-content: center;
+   align-items: center;
 }
 
 .home-content h1 {
@@ -92,19 +116,30 @@ section {
    font-weight: bold;
    margin-bottom: 1rem;
    color: #fff;
+   justify-items: center;
+   justify-content: center;
+   align-items: center;
 }
 
 .home-content h3 span {
    color: rgb(0, 26, 255);
    font-weight: bold;
+   justify-items: center;
+   justify-content: center;
+   align-items: center;
 }
 
 .social-media {
    margin-top: 2rem;
+   justify-items: center;
+   justify-content: center;
+   align-items: center;
 }
+
 
 .social-media a {
    display: inline-flex;
+   justify-items: center;
    justify-content: center;
    align-items: center;
    width: 6rem;
@@ -130,19 +165,24 @@ section {
 .home-img {
    position: relative;
    display: flex;
+   justify-items: center;
    justify-content: center;
    align-items: center;
    margin-top: 3rem;
 }
 
 .home-img img {
-   width: 450px; /* Size of the circular profile picture */
+  
    height: 450px;
    border-radius: 50%; /* Makes the image circular */
    border: 0.5rem solidrgb(0, 26, 255);
    box-shadow: 0 10px 30px rgba(4, 0, 255, 0.5);
    animation: floatImage 4s ease-in-out infinite;
    object-fit: cover; /* Ensures the image is properly scaled */
+   justify-items: center;
+   justify-content: center;
+   align-items: center;
+   width: 400px;
 }
 
 /* Animations */
@@ -185,6 +225,8 @@ section {
    gap: 400px; /* Adjusted the gap between cards */
    padding: 10rem 9%;
    animation: fadeInSection 1s ease-out;
+   justify-items: center;
+   justify-content: center;
    align-items: center;
    margin-left: 10px;
 }
@@ -197,6 +239,9 @@ section {
    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Larger shadow for depth */
    transition: all 0.3s ease;
    text-align: center;
+   justify-items: center;
+   justify-content: center;
+   align-items: center;
 }
 
 /* Hover Effect for Cards */
@@ -284,6 +329,9 @@ section {
    color: #fff;
    animation: fadeIn 1.5s ease-out;
    position: relative;
+   justify-items: center;
+   justify-content: center;
+   align-items: center;
 }
 
 .testimonials::before {
@@ -312,6 +360,8 @@ section {
    gap: 20rem;
    flex-wrap: wrap;
    animation: slideUp 1s ease-out;
+   justify-items: center;
+   align-items: center;
 
 }
 
@@ -325,6 +375,9 @@ section {
    height: 850px;
    transition: all 0.3s ease;
    position: relative;
+   justify-items: center;
+   justify-content: center;
+   align-items: center;
 }
 
 .testimonial-card:hover {
@@ -351,6 +404,9 @@ section {
    margin-bottom: 2rem;
    border: 5px solid rgb(255, 255, 255);
    transition: all 0.3s ease;
+   justify-items: center;
+   justify-content: center;
+   align-items: center;
 }
 
 .testimonial-image:hover {
@@ -365,6 +421,9 @@ section {
    font-weight: 400;
    position: relative;
    z-index: 1;
+   justify-items: center;
+   justify-content: center;
+   align-items: center;
 }
 
 .testimonial-author {
@@ -508,6 +567,18 @@ section {
    .contact-info {
       text-align: center;
    }
+   .navbar {
+      display: none;
+      flex-direction: column;
+  }
+
+  .navbar.active {
+      display: flex;
+  }
+
+  .home-img img {
+      width: 300px;
+  }
 }
 
 
@@ -630,7 +701,7 @@ section {
 }
 
 /* Media Queries */
-@media (max-width: 768px) {
+@media (max-width: 412px) {
    .navbar {
        display: none;
        position: absolute;

@@ -142,15 +142,9 @@ projectBoxes.forEach(box => {
 // Contact Form Modal
 const modal = document.querySelector('#contact-modal');
 const contactButton = document.querySelector('.contact-button');
-const closeModalButton = modal.querySelector('.close-modal');
 
-contactButton.addEventListener('click', () => {
-    modal.style.display = 'block';
-});
 
-closeModalButton.addEventListener('click', () => {
-    modal.style.display = 'none';
-});
+
 
 window.addEventListener('click', (e) => {
     if (e.target === modal) {
@@ -161,10 +155,36 @@ window.addEventListener('click', (e) => {
 // Handle Contact Form Submission
 const contactForm = document.getElementById('contact-form');
 
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const formData = new FormData(contactForm);
-    alert(`Message Sent!\nName: ${formData.get('name')}\nEmail: ${formData.get('email')}\nMessage: ${formData.get('message')}`);
-    contactForm.reset();
-    modal.style.display = 'none';
+// script.js
+
+document.addEventListener("DOMContentLoaded", () => {
+    const menuIcon = document.getElementById("menu-icon");
+    const navbar = document.querySelector(".navbar");
+
+    // Toggle navbar display on menu icon click
+    menuIcon.addEventListener("click", () => {
+        navbar.classList.toggle("active");
+    });
+
+    // Close the menu when clicking a link
+    const navLinks = document.querySelectorAll(".navbar a");
+    navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+            navbar.classList.remove("active");
+        });
+    });
+
+    // Dynamically adjust elements based on window size
+    const adjustResponsiveElements = () => {
+        const homeImage = document.querySelector(".home-img img");
+        if (window.innerWidth < 768) {
+            homeImage.style.width = "200px";
+        } else {
+            homeImage.style.width = "400px";
+        }
+    };
+
+    // Run on page load and window resize
+    adjustResponsiveElements();
+    window.addEventListener("resize", adjustResponsiveElements);
 });
