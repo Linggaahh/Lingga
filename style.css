@@ -9,6 +9,9 @@
 
 body {
    background: #1f242d;
+   justify-items: center;
+   justify-content: center;
+   align-items: center;
    color: #fff;
    overflow-x: hidden;
    font-size: 50px;
@@ -133,8 +136,8 @@ section {
 }
 
 .home-img img {
-   width: 750px; /* Size of the circular profile picture */
-   height: 750px;
+   width: 450px; /* Size of the circular profile picture */
+   height: 450px;
    border-radius: 50%; /* Makes the image circular */
    border: 0.5rem solidrgb(0, 26, 255);
    box-shadow: 0 10px 30px rgba(4, 0, 255, 0.5);
@@ -309,7 +312,7 @@ section {
    gap: 20rem;
    flex-wrap: wrap;
    animation: slideUp 1s ease-out;
-   
+
 }
 
 .testimonial-card {
